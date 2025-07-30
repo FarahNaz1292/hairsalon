@@ -8,6 +8,7 @@ import { motion } from 'framer-motion'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import Link from 'next/link'
 import { MenuIcon } from 'lucide-react'
+import SignUpModal from './SignUpModal'
 
 const Hero = () => {
     const [api, setApi] = React.useState<CarouselApi>()
@@ -23,6 +24,10 @@ const Hero = () => {
     }, [api]);
 
     return (
+       <>
+       <div>
+       <SignUpModal/>
+       </div>
         <div className="relative">
             <div className=" absolute container mx-auto flex justify-between items-center m-4 p-4">
                 <div>
@@ -159,17 +164,21 @@ const Hero = () => {
                     </CarouselItem>
                 </CarouselContent>
             </Carousel>
-            <motion.div
-                className="absolute bottom-0 left-0 w-full text-center z-20"
-                initial={{ x: '100%' }}
-                animate={{ x: '-100%' }}
-                transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-            >
-                <h1 className="text-4xl font-extrabold whitespace-nowrap hollow-text">
-                    FULL HAIR SERVICE SALON
-                </h1>
-            </motion.div>
+            <div className="absolute bottom-0 left-0 w-full overflow-hidden hidden md:block">
+                <motion.div
+                    className="text-center text-white z-20"
+                    initial={{ x: '100%' }}
+                    animate={{ x: '-100%' }}
+                    transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                >
+                    <h1 className="text-6xl font-extrabold whitespace-nowrap hollow-text">
+                        FULL HAIR SERVICE SALON
+                    </h1>
+                </motion.div>
+            </div>
+
         </div>
+       </>
     )
 }
 
