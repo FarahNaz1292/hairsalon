@@ -13,11 +13,14 @@ const Hero = () => {
     const [api, setApi] = React.useState<CarouselApi>()
 
     React.useEffect(() => {
-        if (!api) return
-        api.on("select", () => {
-            // Do something
-        })
-    }, [api])
+        if (!api) return;
+
+        const interval = setInterval(() => {
+            api.scrollNext();
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, [api]);
 
     return (
         <div className="relative">
@@ -72,10 +75,13 @@ const Hero = () => {
                     </Sheet>
                 </div>
             </div>
-            <Carousel setApi={setApi}>
+            <Carousel setApi={setApi} opts={{
+                align: "start",
+                loop: true,
+            }}>
                 <CarouselContent>
                     <CarouselItem>
-                        <div className="relative w-full h-[600px]">
+                        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
                             <Image src="/hairtreatment.jpg" alt="" fill className="object-cover" />
                             <motion.div
                                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 m-12"
@@ -90,8 +96,8 @@ const Hero = () => {
                         </div>
                     </CarouselItem>
 
-                   <CarouselItem>
-                        <div className="relative w-full h-[600px]">
+                    <CarouselItem>
+                        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
                             <Image src="/haircut.jpg" alt="" fill className="object-cover" />
                             <motion.div
                                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 m-12"
@@ -107,18 +113,61 @@ const Hero = () => {
                     </CarouselItem>
 
                     <CarouselItem>
-                        {/* Your third item */}
-                        <div className="h-[600px] bg-green-300 flex items-center justify-center">
-                            <h2 className="text-3xl">Slide 3</h2>
+                        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+                            <Image src="/products.jpg" alt="" fill className="object-cover" />
+                            <motion.div
+                                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 m-12"
+                                initial={{ scale: 0.8, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                transition={{ duration: 0.8, ease: 'easeOut' }}
+                            >
+                                <h1 className='text-4xl m-6 font-serif'>FIND ALL YOUR FAVORITES</h1>
+                                <h1 className='text-4xl font-bold m-6 font-serif'>SHOP NOW</h1>
+                                <Button variant="secondary" className="font-bold text-lg p-6 bg-neutral-600 text-white">SHOP</Button>
+                            </motion.div>
+                        </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+                            <Image src="/hairtreatment.jpg" alt="" fill className="object-cover" />
+                            <motion.div
+                                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 m-12"
+                                initial={{ scale: 0.8, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                transition={{ duration: 0.8, ease: 'easeOut' }}
+                            >
+                                <h1 className='text-4xl m-6 font-serif'>UNLIMITED POSSIBILITIES</h1>
+                                <h1 className='text-4xl font-bold m-6 font-serif'>WITH COLORING</h1>
+                                <Button variant="secondary" className="font-bold text-lg p-6 bg-neutral-600 text-white">COLOR SERVICES</Button>
+                            </motion.div>
+                        </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+                            <Image src="/twinGirls.jpg" alt="" fill className="object-cover" />
+                            <motion.div
+                                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10 m-12"
+                                initial={{ scale: 0.8, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                transition={{ duration: 0.8, ease: 'easeOut' }}
+                            >
+                                <h1 className='text-4xl m-6 font-serif'>GET RADIANT </h1>
+                                <h1 className='text-4xl font-bold m-6 font-serif'>HEALTHIER HAIR</h1>
+                                <Button variant="secondary" className="font-bold text-lg p-6 bg-neutral-600 text-white">LEARN MORE</Button>
+                            </motion.div>
                         </div>
                     </CarouselItem>
                 </CarouselContent>
             </Carousel>
-            <motion.div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-center text-white z-20 m-12 "
-                initial={{ x: '100%', opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}>
-                <h1 className='text-xl font-stretch-expanded font-extrabold'>FULL HAIR SERVICE SALON</h1>
+            <motion.div
+                className="absolute bottom-0 left-0 w-full text-center z-20"
+                initial={{ x: '100%' }}
+                animate={{ x: '-100%' }}
+                transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+            >
+                <h1 className="text-4xl font-extrabold whitespace-nowrap hollow-text">
+                    FULL HAIR SERVICE SALON
+                </h1>
             </motion.div>
         </div>
     )
