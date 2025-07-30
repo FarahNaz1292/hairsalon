@@ -14,7 +14,7 @@ const Footer = () => {
 
                     <motion.div className='snake-border border-orange-500 p-4 ' initial={{ clipPath: 'inset(0 100% 0 0)' }}
                         animate={{ clipPath: 'inset(0 0% 0 0)' }}
-                        transition={{ duration: 2, ease: 'anticipate' }}>
+                        transition={{ duration: 4, ease: 'anticipate' }}>
                         <div className='container mx-auto grid grid-cols-1 sm:grid-cols-6  p-4 m-4'>
                             {/* Logo */}
                             <div className='flex justify-between md:justify-start'>
