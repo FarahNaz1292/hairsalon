@@ -3,12 +3,7 @@
 import React from 'react'
 import {
     Card,
-    CardAction,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
+
 } from "@/components/ui/card"
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
@@ -18,33 +13,96 @@ import Link from 'next/link'
 const MiddleSection = () => {
     return (
         <>
-            <div className=' container mx-auto grid grid-cols-3'>
-                <div className=' flex flex-col items-center justify-center m-4  '>
-                    <Card className='w-[350px] h-[500px] bg-gray-100  '>
+            <div className=' container mx-auto grid grid-cols-3 m-4 p-4'>
+                <div className=' flex flex-col items-center justify-center m-4 gap-5 '>
+                   <div className="w-[350px] h-[600px] relative overflow-hidden">
+                        <Image
+                            src="/haircutting.jpg"
+                            alt="Background"
+                            fill
+                            className="object-cover z-0"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b from-gray-100 to-gray-700 opacity-70 z-10" />
+                        <div className=" absolute top-1/2 left-6  z-20 p-4 text-black flex flex-col justify-center items-center">
+                            <div className=" p-4 text-black">
+                            <p className='text-black bg-white h-15 w-60 m-2 text-center flex justify items-center '>ABOUT </p>
+                                    <p className='text-center  '>Our mission is to enhance the total beauty that lies within us all, through service, education and environmental awareness. Owner Scott Buchanan says, “The success  of Scott J is due to the difference our  team makes. As an owner, I love giving my team opportunities to expand their passion and sharpen their skills.”</p>
+                                </div>
+                        </div>
+                    </div>
 
-                        <CardHeader>
-                            <CardTitle className='relative'>
-                                <Image src={'/haircutting.jpg'} alt='' width={300} height={200} />
-                                <Button className="text-lg p-6 bg-gray-50 text-black w-[250px] absolute hover:bg-gray-600 bottom-1/120 hover:text-white left-1/10">ABOUT</Button>
-                            </CardTitle>
-                            <CardDescription className='text-center'>Our mission is to enhance the <br />total beauty that lies within us all,<br /> through service, education and <br />environmental awareness. Owner<br /> Scott Buchanan says, “The success <br /> of Scott J is due to the difference our <br /> team makes. As an owner, I love <br />giving my team opportunities to <br />expand their passion and sharpen<br /> their skills.”</CardDescription>
-                            <CardAction><Link href={"/about"} /></CardAction>
-                        </CardHeader>
+                    <div className="w-[350px] h-[500px] relative overflow-hidden">
+                        <Image
+                            src="/bottom-bg.jpg"
+                            alt="Background"
+                            fill
+                            className="object-cover z-0"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b from-gray-100 to-gray-600 opacity-70 z-10" />
+                        <div className=" absolute top-1/2 left-6  z-20 p-4 text-black flex flex-col justify-center items-center">
+                            <p className='text-center text-lg font-semibold  '>Our Salon's New Demi Hair Color for Radiant, Healthy Hair</p>
+                            <Button className='text-black bg-white h-15 w-40 m-2'>READ MORE</Button>
+                        </div>
+                    </div>
 
-                    </Card>
                 </div>
-                <div className=''>
-                    <Card className='w-[300px]'>
 
-                        <Image src={'/beardMan.jpg'} alt='' width={300} height={200} />
-                        <CardHeader>
-                            <CardTitle className='relative'>
-                                <p className=" button text-lg p-6 bg-gray-500 text-white w-[300px] text-center absolute hover:bg-gray-600 -bottom-4 hover:text-black -left-6">New Guest Offer<Link href={"/about"} /></p>
-                            </CardTitle>
-                            <CardAction></CardAction>
-                        </CardHeader>
+                <div className=' flex flex-col items-center justify-center gap-5 '>
+                    <div>
+                        <div className='w-[300px]'>
 
-                    </Card>
+                            <Image src={'/beardMan.jpg'} alt='' width={300} height={200} className='relative' />
+
+
+                            <p className='relative'>
+                                <p className=" button text-lg p-6 bg-gray-500 text-white w-[300px] text-center absolute hover:bg-gray-600 -bottom-4 hover:text-black -left-0">New Guest Offer<Link href={"/about"} /></p>
+                            </p>
+
+                        </div>
+                    </div>
+                    <div>
+                        <div className='w-[300px]'>
+
+                            <Image src={'/twinGirls.jpg'} alt='' width={300} height={200} className='relative' />
+
+
+                            <p className='relative'>
+                                <p className=" button text-lg p-6 bg-gray-500 text-white w-[300px] text-center absolute hover:bg-gray-600 -bottom-4 hover:text-black -left-0">SHOP ARTIST FAV'S<Link href={"/about"} /></p>
+                            </p>
+
+                        </div>
+
+                    </div>
+                    <div>
+                        <div className='w-[300px]'>
+
+                            <Image src={'/curlyHair.jpg'} alt='' width={300} height={200} className='relative' />
+
+
+                            <p className='relative'>
+                                <p className=" button text-lg p-6 bg-gray-500 text-white w-[300px] text-center absolute hover:bg-gray-600 -bottom-4 hover:text-black -left-0">GIFT CARDS<Link href={"/about"} /></p>
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div className=' flex flex-col  m-4 items-center justify-center gap-5  '>
+                    <div>
+                        <div className='w-[350px] h-[500px] bg-gray-700 text-white flex flex-col items-center justify-center p-4'>
+                            <h1 className='text-gray-50 text-2xl  font-thin'>REVIEWS</h1>
+                            <p className='text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias optio natus, porro iusto laborum ut praesentium omnis perferendis, quas ipsum minus doloribus! Hic deserunt laborum ipsa natus, velit beatae? Nostrum!
+                                Tempora eum corporis id pariatur, dolores delectus. Maxime exercitationem incidunt at ratione, cumque deserunt officiis pariatur, nihil molestias earum cupiditate aliquam quisquam corrupti totam tempora nulla. Nulla a modi placeat.</p>
+                            <p className='relative'>
+                                <p className=" button text-lg p-6 bg-gray-500 text-white w-[300px] text-center hover:bg-gray-600  hover:text-black m-4 ">READ REVIEWS<Link href={"/about"} /></p>
+                            </p>
+                        </div>
+                        <div className='mt-4'>
+                            <Image src={"/greySalon.jpg"} alt=''  width={350} height={600} className=''  />
+                        </div>
+                    </div>
                 </div>
             </div>
 
