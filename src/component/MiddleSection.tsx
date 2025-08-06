@@ -26,7 +26,10 @@ const MiddleSection = () => {
                         <div className="absolute inset-0 bg-gradient-to-b from-gray-100 to-gray-700 opacity-70 z-10" />
                         <div className=" absolute top-1/2 left-6  z-20 p-4 text-black flex flex-col justify-center items-center">
                             <div className=" p-4 text-black">
-                            <p className='text-black bg-white h-15 w-60 m-2 text-center flex justify items-center '>ABOUT </p>
+                            <p className='text-black bg-white h-15 w-60 m-2 text-center flex justify items-center
+                            
+                            
+                            '>ABOUT </p>
                                     <p className='text-center  '>Our mission is to enhance the total beauty that lies within us all, through service, education and environmental awareness. Owner Scott Buchanan says, “The success  of Scott J is due to the difference our  team makes. As an owner, I love giving my team opportunities to expand their passion and sharpen their skills.”</p>
                                 </div>
                         </div>
