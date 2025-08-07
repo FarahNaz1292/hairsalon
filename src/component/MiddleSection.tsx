@@ -15,7 +15,7 @@ const MiddleSection = () => {
         <>
             <div className=' container mx-auto grid grid-cols-3 m-4 p-4'>
                 <div className=' flex flex-col items-center justify-center m-4 gap-5 '>
-                   <div className="w-[350px] h-[600px] relative overflow-hidden">
+                    <div className="w-[350px] h-[600px] relative overflow-hidden">
                         <Image
                             src="/haircutting.jpg"
                             alt="Background"
@@ -24,14 +24,11 @@ const MiddleSection = () => {
                             priority
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-gray-100 to-gray-700 opacity-70 z-10" />
-                        <div className=" absolute top-1/2 left-6  z-20 p-4 text-black flex flex-col justify-center items-center">
+                        <div className=" absolute top-1/4 left-6  z-20 p-4 text-black flex flex-col justify-center items-center">
                             <div className=" p-4 text-black">
-                            <p className='text-black bg-white h-15 w-60 m-2 text-center flex justify items-center
-                            
-                            
-                            '>ABOUT </p>
-                                    <p className='text-center  '>Our mission is to enhance the total beauty that lies within us all, through service, education and environmental awareness. Owner Scott Buchanan says, “The success  of Scott J is due to the difference our  team makes. As an owner, I love giving my team opportunities to expand their passion and sharpen their skills.”</p>
-                                </div>
+                                <Button className='text-black bg-white h-15 w-40 m-8 flex justify-center items-center '>ABOUT </Button>
+                                <p className='text-center  '>Our mission is to enhance the total beauty that lies within us all, through service, education and environmental awareness. Owner Scott Buchanan says, “The success  of Scott J is due to the difference our  team makes. As an owner, I love giving my team opportunities to expand their passion and sharpen their skills.”</p>
+                            </div>
                         </div>
                     </div>
 
@@ -59,9 +56,9 @@ const MiddleSection = () => {
                             <Image src={'/beardMan.jpg'} alt='' width={300} height={200} className='relative' />
 
 
-                            <p className='relative'>
+                            <div className='relative'>
                                 <p className=" button text-lg p-6 bg-gray-500 text-white w-[300px] text-center absolute hover:bg-gray-600 -bottom-4 hover:text-black -left-0">New Guest Offer<Link href={"/about"} /></p>
-                            </p>
+                            </div>
 
                         </div>
                     </div>
@@ -70,10 +67,11 @@ const MiddleSection = () => {
 
                             <Image src={'/twinGirls.jpg'} alt='' width={300} height={200} className='relative' />
 
-
-                            <p className='relative'>
-                                <p className=" button text-lg p-6 bg-gray-500 text-white w-[300px] text-center absolute hover:bg-gray-600 -bottom-4 hover:text-black -left-0">SHOP ARTIST FAV'S<Link href={"/about"} /></p>
-                            </p>
+                           <Link href={"/products"} className='relative'>
+                            <div className='relative'>
+                                <p className=" button text-lg p-6 bg-gray-500 text-white w-[300px] text-center absolute hover:bg-gray-600 -bottom-4 hover:text-black -left-0">SHOP ARTIST FAV'S</p>
+                            </div>
+                            </Link>
 
                         </div>
 
@@ -84,9 +82,9 @@ const MiddleSection = () => {
                             <Image src={'/curlyHair.jpg'} alt='' width={300} height={200} className='relative' />
 
 
-                            <p className='relative'>
+                            <div className='relative'>
                                 <p className=" button text-lg p-6 bg-gray-500 text-white w-[300px] text-center absolute hover:bg-gray-600 -bottom-4 hover:text-black -left-0">GIFT CARDS<Link href={"/about"} /></p>
-                            </p>
+                            </div>
 
                         </div>
 
@@ -103,7 +101,7 @@ const MiddleSection = () => {
                             </p>
                         </div>
                         <div className='mt-4'>
-                            <Image src={"/greySalon.jpg"} alt=''  width={350} height={600} className=''  />
+                            <Image src={"/greySalon.jpg"} alt='' width={350} height={600} className='' />
                         </div>
                     </div>
                 </div>
