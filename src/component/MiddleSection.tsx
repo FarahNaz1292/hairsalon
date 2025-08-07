@@ -96,9 +96,9 @@ const MiddleSection = () => {
                             <h1 className='text-gray-50 text-2xl  font-thin'>REVIEWS</h1>
                             <p className='text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias optio natus, porro iusto laborum ut praesentium omnis perferendis, quas ipsum minus doloribus! Hic deserunt laborum ipsa natus, velit beatae? Nostrum!
                                 Tempora eum corporis id pariatur, dolores delectus. Maxime exercitationem incidunt at ratione, cumque deserunt officiis pariatur, nihil molestias earum cupiditate aliquam quisquam corrupti totam tempora nulla. Nulla a modi placeat.</p>
-                            <p className='relative'>
+                            <div className='relative'>
                                 <p className=" button text-lg p-6 bg-gray-500 text-white w-[300px] text-center hover:bg-gray-600  hover:text-black m-4 ">READ REVIEWS<Link href={"/about"} /></p>
-                            </p>
+                            </div>
                         </div>
                         <div className='mt-4'>
                             <Image src={"/greySalon.jpg"} alt='' width={350} height={600} className='' />
