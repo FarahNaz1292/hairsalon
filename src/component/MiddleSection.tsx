@@ -13,7 +13,7 @@ import Link from 'next/link'
 const MiddleSection = () => {
     return (
         <>
-            <div className=' container mx-auto grid grid-cols-3 m-4 p-4'>
+            <div className=' container mx-auto grid lg:grid-cols-3 sm:grid-cols-1 m-4 p-4'>
                 <div className=' flex flex-col items-center justify-center m-4 gap-5 '>
                     <div className="w-[350px] h-[600px] relative overflow-hidden">
                         <Image
