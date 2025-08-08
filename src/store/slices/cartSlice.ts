@@ -1,4 +1,4 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 interface CartItem {
   id: string;
@@ -10,6 +10,16 @@ interface CartItem {
 }
 
 const initialState: CartItem[] = [];
+export const loadCart = createAsyncThunk<CartItem[]>(
+  'cart/loadCart',
+  async () => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem('cart');
+      return stored ? JSON.parse(stored) : [];
+    }
+    return [];
+  }
+);
 const cartSlice=createSlice({
     name: 'cart',
     initialState,

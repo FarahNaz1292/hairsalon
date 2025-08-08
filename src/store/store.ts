@@ -1,4 +1,4 @@
-// src/store/store.ts (or index.ts if that's your structure)
+
 import { configureStore } from "@reduxjs/toolkit"
 import cartReducer from "./slices/cartSlice" 
 
