@@ -35,9 +35,7 @@ const Hero = () => {
                         <div>
                             <div className='flex'>
                                 <Image src="/salonLogo.png" alt="Logo" width={200} height={40} className=' absolute top-0 left-1/8  z-20' />
-                                {/* Logo */}
-
-                                {/* Desktop Nav */}
+                            
                                 <div className=''>
                                     <div className="hidden md:flex gap-2   absolute top-0 left-1/2 z-20 ">
                                         {['services', 'about', 'specials', 'shop', 'locations'].map((route) => (

@@ -1,6 +1,7 @@
 import dbConnect from "@/lib/dbConnect";
 import { Product } from "@/lib/models/Products";
 import { NextResponse } from "next/server";
+import mongoose from "mongoose";
 
 
 
@@ -9,8 +10,11 @@ type Params={
         id:string
     }
 }
-//Get product by ID
+
 export async function GET(req:Request, {params:{id}}: Params){
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return NextResponse.json({ error: "Invalid product ID" }, { status: 400 });
+    }
     await dbConnect();
    const product= await Product.findById(id);
    if(!product){
