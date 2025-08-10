@@ -1,6 +1,6 @@
-// app/api/review/route.ts
+
 import dbConnect from "@/lib/dbConnect";
-import { Reviews } from "@/lib/models/Reviews";
+import { userReviews } from "@/lib/models/Reviews";
 import { NextRequest, NextResponse } from "next/server";
 import mongoose from "mongoose";
 
@@ -21,7 +21,7 @@ const body = await req.json();
       );
     }
 
-    const review = await Reviews.create({
+    const review = await userReviews.create({
       reviewer: new mongoose.Types.ObjectId(reviewer),
       productReview: new mongoose.Types.ObjectId(productReview),
       rating,

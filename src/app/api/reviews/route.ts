@@ -6,8 +6,8 @@ import { NextResponse } from "next/server";
 export async function GET() {
     try {
         await dbConnect();
-        const Review = await Reviews.find();
-        return NextResponse.json(Review);
+         const reviews = await Reviews.find().populate('reviewer').lean();
+        return NextResponse.json(reviews);
 
     } catch (error) {
         return NextResponse.json({error:"Failed to fetch user's review", status:500})

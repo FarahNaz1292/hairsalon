@@ -33,9 +33,6 @@ export async function DELETE(req: Request, { params }: Params) {
 
   return NextResponse.json({ message: 'Product deleted' });
 }
-// Patch a product by ID
-
-// PATCH: update a product by ID
 export async function PATCH(req: Request, { params }: Params) {
   const updates = await req.json();
   await dbConnect();

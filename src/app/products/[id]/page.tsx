@@ -9,7 +9,7 @@ interface SingleProductPageProps {
 }
 const page = async function ({ params }: { params: { id: string } }) {
   await dbConnect();
- const product = await Product.findById(params.id).lean();
+ const product = await Product.findById(params.id);
 
   if (!product) return <div>Product not found</div>;
 

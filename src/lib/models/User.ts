@@ -14,15 +14,15 @@ const userSchema= new mongoose.Schema({
       trim: true,
       match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address.']
     },
+    image:{
+      type:String,
+      required: true
+    },
     password: {
       type: String,
       required: true,
       minlength: 6,
-      select: false // Prevents password from being returned in queries by default
-    },
-    fullName: {
-      type: String,
-      trim: true,
+      select: false 
     },
     role: {
       type: String,
@@ -33,18 +33,10 @@ const userSchema= new mongoose.Schema({
       type: Boolean,
       default: true,
     },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-    },
-    updatedAt: {
-      type: Date,
-      default: Date.now,
-    },
   },
   {
     timestamps: true, 
   })
 
 
-module.exports = mongoose.model('User', userSchema);
+ export const User=mongoose.models.User || mongoose.model("User", userSchema)

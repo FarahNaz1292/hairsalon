@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from 'react'
-
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { useDispatch } from 'react-redux'
@@ -19,7 +18,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import Footer from './Footer'
-import Reviews from './Reviews'
+
 
 interface ProductType {
     _id: string;
@@ -113,7 +112,7 @@ const SingleProductPage = ({ product }: { product: ProductType }) => {
                                         design. Built with premium materials, it offers unparalleled
                                         performance and reliability.
                                     </p>
-                                    <p>
+                                
                                         <div className='border-2 bg-orange-50 m-4'>
                                             <h3 className='font-bold text-lg m-2'>Key Benefits of our selected Products</h3>
                                             <ul className=''>
@@ -123,7 +122,6 @@ const SingleProductPage = ({ product }: { product: ProductType }) => {
                                                 <li className=' w-100 m-2'>Clinically proven to strengthen hair</li>
                                                 <li className='w-100 m-2'>100% vegan</li></ul>
                                         </div>
-                                    </p>
                                 </AccordionContent>
                             </AccordionItem>
                             <AccordionItem value="item-2">
@@ -167,12 +165,7 @@ const SingleProductPage = ({ product }: { product: ProductType }) => {
                 muted
                 playsInline
             />
-
-    <Reviews/>
-
-
-
-
+   
             <Footer />
         </>
     )

@@ -1,7 +1,7 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose  from "mongoose";
 
 
-const reviewSchema = new mongoose.Schema(
+const ReviewSchema = new mongoose.Schema(
   {
     reviewer: {
       type: mongoose.Schema.Types.ObjectId,
@@ -35,6 +35,8 @@ const reviewSchema = new mongoose.Schema(
 );
 
 
-reviewSchema.index({ reviewer: 1, reviewee: 1 }, { unique: true });
+ReviewSchema.index({ reviewer: 1, productReview: 1 }, { unique: true });
 
- export const Reviews=mongoose.models.Reviews || mongoose.model("Reviews", reviewSchema)
+export const Reviews =
+  mongoose.models.Reviews || mongoose.model("Reviews", ReviewSchema);
+  
