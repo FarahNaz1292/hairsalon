@@ -8,9 +8,9 @@ const reviewSchema = new mongoose.Schema(
       ref: 'User',
       required: true,
     },
-    reviewee: {
+    productReview: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      ref: 'Product',
       required: true,
     },
     rating: {
@@ -37,4 +37,4 @@ const reviewSchema = new mongoose.Schema(
 
 reviewSchema.index({ reviewer: 1, reviewee: 1 }, { unique: true });
 
-module.exports = mongoose.model('Review', reviewSchema);
+ export const Reviews=mongoose.models.Reviews || mongoose.model("Reviews", reviewSchema)
